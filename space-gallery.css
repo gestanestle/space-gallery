@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,400;0,700;1,100&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: auto;
     background-color: black;
@@ -7,7 +11,7 @@ body {
 }
 
 .container {
-
+   height: 680px;
 }
 
 #title {
@@ -24,4 +28,34 @@ body {
     font-style: italic;
     font-weight: 100;
     color: azure;
+}
+
+#section2 {
+    background-image: url("133256.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+}
+
+#card-img {
+    height: 225px;
+    object-fit: cover;
+}
+
+#card-body {
+    height: 80px;
+}
+
+#card-title {
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
 }
