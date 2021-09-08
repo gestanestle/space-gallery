@@ -59,3 +59,18 @@ body {
     word-wrap: break-word;
     overflow: hidden;
 }
+
+#popUp-modal {
+    background-image: url('card-wp.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#search-results-number {
+    background-color: blue;
+    font-style: italic;
+    height: 28px;
+}
