@@ -1,7 +1,18 @@
+window.onbeforeunload = function() { 
+    window.setTimeout(function () { 
+        window.location = 'index.html';
+    }, 0); 
+    window.onbeforeunload = null;
+}
+
 let f = document.getElementById("form")
 let x = document.getElementById("search")
 let s2 = document.getElementById("section-two")
 let cards = document.getElementById("section2")
+let s3= document.getElementById("section-three")
+let tiles = document.getElementById("section3")
+let nav = document.getElementById("navigation-links")
+
 
 f.addEventListener("submit", (e)=> {
     e.preventDefault()
@@ -19,6 +30,13 @@ function remove_data() {
     var col = document.querySelectorAll("text-center.row.col");
     if(col != null) {
         cards.innerHTML = "";
+    }   
+}
+
+function remove_tiles() {
+    var col = document.querySelectorAll(".container-fluid.text-center.row.col");
+    if(col != null) {
+        tiles.innerHTML = "";
     }   
 }
 
@@ -105,9 +123,80 @@ async function showDetails (title) {
 
 }
 
-window.onbeforeunload = function() { 
-    window.setTimeout(function () { 
-        window.location = 'index.html';
-    }, 0); 
-    window.onbeforeunload = null;
+var o = 1;
+
+function next_page() {
+    remove_tiles();  
+    o++;
+    allImages(o); 
+    console.log("To next: " + o)
 }
+
+function prev_page() {
+    remove_tiles();
+    o--;
+    allImages(o);
+    console.log("To previous: " + o)
+}
+
+async function allImages (o) {
+    const response = await fetch(`https://images-api.nasa.gov/search?keywords=hubble&media_type=image&page=${o}`)
+    const data = await response.json()
+    const item = data.collection.items
+
+    let i = 0
+    while (i < item.length){
+
+
+        let update = `
+
+        <div class="col" id="colCard">
+        <div class="card mt-2 text-center" style="color: black; width: 9rem;" onclick="return showDetails('${item[i].data[0].title}')">
+        <img src="${item[i].links[0].href}" class="card-img-top" id="card-img-2">
+        <div class="card-body text-center" style="color: black" id="card-body-2">
+        <p class="card-title" id="card-title-2" >${item[i].data[0].title}</p>
+        </div>
+        </div>
+        </div>
+        
+        `
+
+        tiles.insertAdjacentHTML("beforeend", update)
+        i++;
+
+   }
+
+   nav.innerHTML = `
+    <div class="col">
+        <a href="#section-three" id="next" onclick="return next_page()">Next</a>
+    </div>
+   `
+
+   if (o > 1) {
+    let update = `
+    <div class="col">
+        <a href="#section-three" id="prev" onclick="return prev_page()">Previous</a>
+    </div>
+   `
+    if (document.getElementById('prev') == null) {
+        nav.insertAdjacentHTML("afterbegin", update)
+    }
+    }
+
+   s3.scrollIntoView();
+
+   return o;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

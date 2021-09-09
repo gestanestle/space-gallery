@@ -10,8 +10,8 @@ body {
     color: aliceblue;
 }
 
-.container {
-   height: 680px;
+#container-one {
+   height: 650px;
 }
 
 #title {
@@ -73,4 +73,21 @@ body {
     background-color: blue;
     font-style: italic;
     height: 28px;
+}
+
+#card-img-2 {
+    height: 9rem;
+    object-fit: cover;
+}
+
+#card-body-2 {
+    height: 50px;
+}
+
+#card-title-2 {
+    font-size: 70%;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
 }
