@@ -37,6 +37,8 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
+
 }
 
 .card {
@@ -50,14 +52,7 @@ body {
 }
 
 #card-body {
-    height: 80px;
-}
-
-#card-title {
-    display: block;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
+    height: auto;
 }
 
 #popUp-modal {
@@ -70,9 +65,19 @@ body {
 }
 
 #search-results-number {
-    background-color: blue;
+    background-color:midnightblue ;
     font-style: italic;
     height: 28px;
+}
+
+#section3 {
+    background-image: url("39613.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #card-img-2 {
@@ -81,13 +86,22 @@ body {
 }
 
 #card-body-2 {
-    height: 50px;
+    height: auto;
 }
 
 #card-title-2 {
     font-size: 70%;
     display: block;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow: hidden;
+}
+
+#navigation-links {
+    background: rgb(105,2,2);
+    background: linear-gradient(55deg, rgba(105,2,2,1) 0%, rgba(6,9,154,1) 100%);
+    color: white;
+}
+
+#all-images {
+    font-family: 'Azeret Mono', monospace;
+    background: rgb(105,2,2);
+    background: linear-gradient(55deg, rgba(105,2,2,1) 0%, rgba(6,9,154,1) 100%);
 }
