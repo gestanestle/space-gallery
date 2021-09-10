@@ -19,6 +19,7 @@ var n = 1;
 
 f.addEventListener("submit", (e)=> {
     e.preventDefault()
+    n = 1;
     fetch_data(x.value, n)
 })
 
