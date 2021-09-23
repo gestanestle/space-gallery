@@ -7,13 +7,13 @@ window.onbeforeunload = function() {
 
 let f = document.getElementById("form")
 let x = document.getElementById("search")
-let s2 = document.getElementById("section-two")
+let s2 = document.getElementById("search-results")
 let cards = document.getElementById("section2")
-let s3= document.getElementById("section-three")
+let s3= document.getElementById("allImages")
 let tiles = document.getElementById("section3")
 let nav = document.getElementById("navigation-links")
 
-//section-two
+//search-results
 
 var n = 1;
 
@@ -100,7 +100,7 @@ async function fetch_data (y, n) {
 
    nav.innerHTML = `
     <div class="col">
-        <a href="#section-three" id="next" onclick="return nextPage()">Next</a>
+        <a href="#allImages" id="next" onclick="return nextPage()">Next</a>
     </div>
    `
    }
@@ -112,7 +112,7 @@ async function fetch_data (y, n) {
    if (n > 1) {
     let update = `
     <div class="col">
-        <a href="#section-three" id="prev" onclick="return prevPage()">Previous</a>
+        <a href="#allImages" id="prev" onclick="return prevPage()">Previous</a>
     </div>
    `
     if (document.getElementById('prev') == null) {
@@ -121,13 +121,13 @@ async function fetch_data (y, n) {
     }
 
 
-   location.href = "#section-two"
+   location.href = "#search-results"
 
    return n;
     
 }
 
-//section-three
+//allImages
 
 var o = 1;
 
@@ -173,7 +173,7 @@ async function allImages (o) {
    if(item.length != 0) {
    nav.innerHTML = `
     <div class="col">
-        <a href="#section-three" id="next" onclick="return next_page()">Next</a>
+        <a href="#allImages" id="next" onclick="return next_page()">Next</a>
     </div>
    `
     }
@@ -181,7 +181,7 @@ async function allImages (o) {
    if (o > 1) {
     let update = `
     <div class="col">
-        <a href="#section-three" id="prev" onclick="return prev_page()">Previous</a>
+        <a href="#allImages" id="prev" onclick="return prev_page()">Previous</a>
     </div>
    `
     if (document.getElementById('prev') == null) {
@@ -208,16 +208,14 @@ async function showDetails (title) {
             <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title w-100 text-center"  style="color: black">
-              <i class="bi bi-moon-stars"></i>
-              &emsp;
+              <i class="bi bi-moon-stars float-start ms-4">
+              </i><i class="bi bi-moon-stars float-end me-4"></i>
               ${item[0].data[0].title}
-              &emsp;
-              <i class="bi bi-moon-stars"></i>
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="popUp-modal">
-                <div class="card mt-2" style="width: 25rem;" style="color: black">
+                <div class="card mt-2" style="width: 18rem;" style="color: black">
             <img src="${item[0].links[0].href}" class="card-img-top" id="card-img">
             <div class="card-body text-center" style="color: black; height:auto">
             <p>${item[0].data[0].description}</p>   
