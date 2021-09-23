@@ -105,3 +105,9 @@ body {
     background: rgb(105,2,2);
     background: linear-gradient(55deg, rgba(105,2,2,1) 0%, rgba(6,9,154,1) 100%);
 }
+
+@media (max-width: 320px) {
+    #mdlcrd {
+        width: 18rem;
+    }
+}

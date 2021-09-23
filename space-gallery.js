@@ -215,7 +215,7 @@ async function showDetails (title) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="popUp-modal">
-                <div class="card mt-2" style="width: 18rem;" style="color: black">
+                <div class="card mt-2" style="width: 25rem;" style="color: black" id="mdlcrd">
             <img src="${item[0].links[0].href}" class="card-img-top" id="card-img">
             <div class="card-body text-center" style="color: black; height:auto">
             <p>${item[0].data[0].description}</p>   
